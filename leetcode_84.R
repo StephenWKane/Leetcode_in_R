@@ -1,6 +1,8 @@
 # leetcode 84
 
 heights = c(2,1,5,6,2,3) # the case from the problem statement
+
+solve = function(height){
 df = data.frame(start = NULL,end = NULL,area = NULL)
 for(i in 1:(length(heights) - 1)){
   starting_height = heights[i]
@@ -11,4 +13,7 @@ for(i in 1:(length(heights) - 1)){
   }
 }
 df[which(df$area == max(df$area)),]$area
+}
+
+solve(heights)
 
