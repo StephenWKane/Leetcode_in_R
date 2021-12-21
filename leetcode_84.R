@@ -6,7 +6,7 @@ for(i in 1:(length(heights) - 1)){
   starting_height = heights[i]
   for(j in (i + 1):length(heights)){
     height = min(heights[i:j]) # the rectangle can't be taller than the smallest value in the rest of the vector
-    area = height*(j - i + 1) # the base is (j - (1 - j)) long
+    area = height*(j - i + 1) # the base is (j - (i - 1)) long
     df = rbind(df,data.frame(start = i,end = j,area = area))
   }
 }
