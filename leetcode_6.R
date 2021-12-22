@@ -9,8 +9,8 @@ row = 1
 
 # there is probably a formula to calculate how many columns there needs to be
 # i chose values that are at least big enough and they get chopped off at the end
-mat = matrix(data = "",nrow = numRows,ncol = numRows^3) 
-col_seq = seq(1,numRows^3,by = numRows - 1) 
+mat = matrix(data = "",nrow = numRows,ncol = numRows^2) 
+col_seq = seq(1,numRows^2,by = numRows - 1) 
 while(i <= length(s1)){
   
   if(col %in% col_seq & row < numRows){
@@ -41,11 +41,11 @@ while(i <= length(s1)){
 # the apply makes a vector where each element is a row of the matrix
 # pasted into a string
 # then you collapse that vector again into one string
+print(mat)
 paste0(apply(mat,1,paste,collapse=""),collapse = "")
 }
 
 s = "PAYPALISHIRING"; numRows = 3
-
 solve(s,numRows)
 
 s = "PAYPALISHIRING"; numRows = 4
