@@ -6,8 +6,11 @@ s1 = unlist(strsplit(s,split = ""))
 i = 1
 col = 1
 row = 1
-mat = matrix(data = "",nrow = numRows,ncol = numRows^3)
-col_seq = seq(1,numRows^3,by = numRows - 1)
+
+# there is probably a formula to calculate how many columns there needs to be
+# i chose values that are at least big enough and they get chopped off at the end
+mat = matrix(data = "",nrow = numRows,ncol = numRows^3) 
+col_seq = seq(1,numRows^3,by = numRows - 1) 
 while(i <= length(s1)){
   
   if(col %in% col_seq & row < numRows){
