@@ -8,7 +8,7 @@ col = 1
 row = 1
 
 # there is probably a formula to calculate how many columns there needs to be
-# i chose values that are at least big enough and they get chopped off at the end
+# I  chose values that are at least big enough and they get chopped off at the end
 mat = matrix(data = "",nrow = numRows,ncol = numRows^2) 
 col_seq = seq(1,numRows^2,by = numRows - 1) 
 while(i <= length(s1)){
@@ -29,12 +29,13 @@ while(i <= length(s1)){
   } else {
     # if the current column is not in the column sequence 
     # then you are in between columns so you want to fill the matrix and then
-    # increase the column and decrease the row by 1.
+    # increase the column and decrease the row by 1 like in the previous case.
     mat[row,col] = s1[i]
     col = col + 1
     row = row - 1
   }
   
+  # increase the counter
   i = i + 1
   
 }

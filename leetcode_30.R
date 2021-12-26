@@ -5,6 +5,7 @@ s1 = unlist(strsplit(s,split = "")) # turn the string into a vector of character
 
 words = c("foo","bar")
 
+solve = function(s1,words){
 # get a vector of all the permutations of the vector "words"
 words_perm = unlist(lapply(permn(words),FUN = function(x){paste0(x,collapse = "")}))
 # get the total length of each concatenation of "words"
@@ -21,3 +22,6 @@ for(i in 1:(length(s1) - (word_perm_length) + 1)){
 }
 
 found
+}
+
+solve(s1,words)
