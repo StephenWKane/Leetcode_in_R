@@ -42,7 +42,6 @@ while(i <= length(s1)){
 # the apply makes a vector where each element is a row of the matrix
 # pasted into a string
 # then you collapse that vector again into one string
-print(mat)
 paste0(apply(mat,1,paste,collapse=""),collapse = "")
 }
 
