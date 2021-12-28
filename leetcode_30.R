@@ -1,11 +1,11 @@
 library(combinat) # a library to get permutations
 
-s = "barfoothefoobarman"
-s1 = unlist(strsplit(s,split = "")) # turn the string into a vector of characters
+solve = function(s,words){
+  
+# s is a string of characters
+# words is a vector of strings
 
-words = c("foo","bar")
-
-solve = function(s1,words){
+s1 = unlist(strsplit(s,split = "")) # turn the input string into a vector of characters
 # get a vector of all the permutations of the vector "words"
 words_perm = unlist(lapply(permn(words),FUN = function(x){paste0(x,collapse = "")}))
 # get the total length of each concatenation of "words"
@@ -24,4 +24,12 @@ for(i in 1:(length(s1) - (word_perm_length) + 1)){
 found
 }
 
-solve(s1,words)
+s = "barfoothefoobarman"; words = c("foo","bar")
+
+solve(s,words)
+
+s = "barfoofoobarthefoobarman"; words = c("bar","foo","the")
+solve(s,words)
+
+s = "wordgoodgoodgoodbestword"; words = c("word","good","best","word")
+solve(s,words)
