@@ -16,4 +16,3 @@ df[which(df$area == max(df$area)),]$area
 }
 
 solve(heights)
-
