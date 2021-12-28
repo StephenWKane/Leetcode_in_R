@@ -1,4 +1,4 @@
-#leetcode #239
+#leetcode 239
 
 # this might seem like a dumb question but the key is that you can only see the values
 # in the sliding window at one time.
@@ -6,12 +6,12 @@
 
 solve = function(v,k){
 end = (length(v) - (k - 1)) # the window length determines how far we go
-max = 0
+max_value = 0
 for(i in 1:end){
   val = max(v[i:(i + k - 1)])
-  max = max(max,val)
+  max_value = max(max_value,val)
 }
-max
+max_value
 }
 
 v = c(1,3,-1,-3,5,3,6,7)
