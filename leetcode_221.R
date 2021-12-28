@@ -28,7 +28,6 @@ result_df = data.frame(row = NULL,col = NULL,area = NULL)
 for(i in 2:max_square_size){ # skipping 1 because I don't want to press enter too much
   for(j in 1:(nrow(matrix) - i + 1)){
     for(k in 1:(ncol(matrix) - i + 1)){
-      blank_matrix = matrix(nrow = dim(matrix)[1],ncol = dim(matrix)[2],data = 0)
       if(sum(matrix[j:(j + i - 1),k:(k + i - 1)]) == i^2){
         result_df = rbind(result_df,data.frame(row = j,col = k,area = i^2))
         print(plot_func(matrix,i,j,k,bool = TRUE))
