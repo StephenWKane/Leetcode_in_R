@@ -22,11 +22,11 @@ for(i in 1:length(vec_s)){
   }
 }
 
-store_unique_strings_unique = unique(store_strings)
+store_unique_strings = unique(store_strings)
 # this makes a vector of numbers corresponding to the number of characters of each string in the vector
-num_chars = nchar(store_unique_strings_unique)
+num_chars = nchar(store_unique_strings)
 # pull the value from the unique strings that corresponds to the string of maximum length.
-store_unique_strings_unique[which(num_chars == max(num_chars))]
+store_unique_strings[which(num_chars == max(num_chars))]
 }
 
 s = "abcabcbb"
