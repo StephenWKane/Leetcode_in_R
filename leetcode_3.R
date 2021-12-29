@@ -1,6 +1,5 @@
-#leetcode # 3
 
-get_longest_ss_no_repeating_chars = function(x){
+solve = function(x){
 
 # convert the input string into a vector of characters
 vec_s = unlist(strsplit(x,""))
@@ -11,8 +10,7 @@ for(i in 1:length(vec_s)){
   # initialize the running string on the first letter
   if(i == 1){running_string = vec_s[i]} else {
     
-    # if the current letter isn't in the running string and you aren't at the last letter then append it
-    # to the running string
+    # if the current letter isn't in the running string then append it to the running string
     if(!(vec_s[i] %in% running_string) & i < length(vec_s)){
       running_string = c(running_string,vec_s[i])
     } else {
@@ -27,12 +25,12 @@ for(i in 1:length(vec_s)){
 store_unique_strings_unique = unique(store_unique_strings)
 # this makes a vector of numbers corresponding to the number of characters of each string in the vector
 num_chars = nchar(store_unique_strings_unique)
-# pull the value from the unique strings that corresponds to string with maximum length.
+# pull the value from the unique strings that corresponds to the string of maximum length.
 store_unique_strings_unique[which(num_chars == max(num_chars))]
 }
 
 s = "abcabcbb"
-get_longest_ss_no_repeating_chars(s)
+solve(s)
 
 s = "iurtewibcdabcbbqwetry"
-get_longest_ss_no_repeating_chars(s)
+solve(s)
