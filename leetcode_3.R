@@ -3,7 +3,7 @@ solve = function(x){
 
 # convert the input string into a vector of characters
 vec_s = unlist(strsplit(x,""))
-# make a vector to store unique substrings
+# make a vector to store substrings 
 store_strings = c(NULL)
 
 for(i in 1:length(vec_s)){
